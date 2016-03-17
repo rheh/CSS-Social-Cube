@@ -1,0 +1,150 @@
+/*************** ANIMATIONS ***************/
+ @-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotateY(0);
+    }
+    to {
+        -webkit-transform: rotateY(360deg);
+    }
+}
+@-ms-keyframes spin {
+    from {
+        ms-transform: rotateY(0);
+    }
+    to {
+        ms-transform: rotateY(360deg);
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+@-webkit-keyframes spinr {
+    from {
+        -webkit-transform: rotateY(360deg);
+    }
+    to {
+        -webkit-transform: rotateY(0);
+    }
+}
+@-ms-keyframes spinr {
+    from {
+        ms-transform: rotateY(360deg);
+    }
+    to {
+        ms-transform: rotateY(0);
+    }
+}
+@keyframes spinr {
+    from {
+        transform: rotateY(360deg);
+    }
+    to {
+        transform: rotateY(0);
+    }
+}
+
+body {
+    margin-top: 50px;
+}
+
+.wrap {
+    -webkit-perspective: 800px;
+    -webkit-perspective-origin: 50% 100px;
+    -moz-perspective: 800px;
+    -moz-perspective-origin: 50% 100px;
+    -ms-perspective: 800px;
+    -ms-perspective-origin: 50% 100px;
+    perspective: 800px;
+    perspective-origin: 50% 100px;
+    height: 250px;
+}
+
+.cube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.sec1 {
+    animation: spin 5s infinite linear;
+    -webkit-animation: spin 5s infinite linear;
+    -moz-animation: spin 5s infinite linear;
+    -ms-animation: spin 5s infinite linear;
+}
+
+.sec2 {
+    animation: spinr 5s infinite linear;
+    -webkit-animation: spinr 5s infinite linear;
+    -moz-animation: spinr 5s infinite linear;
+    -ms-animation: spinr 5s infinite linear;
+}
+
+.cube div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 30px rgba(125, 125, 125, 0.8);
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.cube div img {
+    padding-top: 50px;
+}
+
+.back {
+    transform: translateZ(-100px) rotateY(180deg);
+    -webkit-transform: translateZ(-100px) rotateY(180deg);
+}
+
+.right {
+    transform: rotateY(-270deg) translateX(100px);
+    -webkit-transform: rotateY(-270deg) translateX(100px);
+    transform-origin: top right;
+    -webkit-transform-origin: top right;
+}
+
+.left {
+    transform: rotateY(270deg) translateX(-100px);
+    -webkit-transform: rotateY(270deg) translateX(-100px);
+    transform-origin: center left;
+    -webkit-transform-origin: center left;
+}
+
+.top {
+    transform: rotateX(-90deg) translateY(-100px);
+    -webkit-transform: rotateX(-90deg) translateY(-100px);
+    transform-origin: top center;
+    -webkit-transform-origin: top center;
+}
+
+.bottom {
+    transform: rotateX(90deg) translateY(100px);
+    -webkit-transform: rotateX(90deg) translateY(100px);
+    transform-origin: bottom center;
+    -webkit-transform-origin: bottom center;
+}
+
+.front {
+    transform: translateZ(100px);
+    -webkit-transform: translateZ(100px);
+}
+
+.paused {
+    -ms-animation-play-state:paused;
+    -o-animation-play-state:paused;
+    -moz-animation-play-state:paused;
+    -webkit-animation-play-state:paused;
+    animation-play-state: paused;
+}
